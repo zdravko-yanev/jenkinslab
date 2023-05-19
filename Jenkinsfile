@@ -4,7 +4,7 @@ pipeline {
         stage('Git clone') {
             steps {
                 echo 'cloning git repo'
-                git branch: 'main', credentialsId: 'git-ssh-key', url: 'git@github.com:zdravko-yanev/jenkins-private.git'
+                git branch: 'main', credentialsId: 'git-repo-token', url: 'https://github.com/zdravko-yanev/jenkins-private.git'
             }
         }
 
