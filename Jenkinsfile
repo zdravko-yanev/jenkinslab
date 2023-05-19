@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Stage 1') {
-            steps {
-                echo 'Hello world!'
-            }
-        }
         stage('Git clone') {
             steps {
                 echo 'cloning git repo'
@@ -13,7 +8,11 @@ pipeline {
             }
         }
 
-
+    stage('Docker Build') {
+      steps {
+      	sh 'docker build -t myimage:latest .'
+      }
+    }
 
     }
 }
